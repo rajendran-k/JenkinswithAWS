@@ -4,8 +4,21 @@ pipeline {
     stages {
         stage('Build') {
             steps {             
-                sh ‘tidy -q -e *.html’
+                echo 'Testing..'
+                echo pwd
             }
-        }       
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+                echo pwd
+                echo ls           
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'               
+            }
+        }
     }
 }
