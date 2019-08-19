@@ -3,8 +3,7 @@ pipeline {
 
     stages {
         stage('Build') {
-            steps {
-                echo 'Building the solution ..'
+            steps {             
                 sh ‘tidy -q -e *.html’
             }
         }
