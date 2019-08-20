@@ -4,11 +4,11 @@ pipeline {
     stages {
         stage('lint HTML') {
             steps {             
-              sh 'tidy -q -e index.html'
+              sh 'tidy -q -e *.html'
             }
         }
          stage('AWS') {
-        steps {
+        steps {           
 
           withAWS(region:'us-west-2',credentials:'aws') {
             s3Upload(pathStyleAccessEnabled:true, payloadSigningEnabled: true, file:'index.html', bucket:'heemjenkins')
