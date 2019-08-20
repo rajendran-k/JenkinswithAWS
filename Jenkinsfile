@@ -4,8 +4,7 @@ pipeline {
     stages {
         stage('lint HTML') {
             steps {             
-                echo 'Testing..'                
-                echo pwd
+               tidy -q -e *.html
             }
         }
          stage('AWS') {
