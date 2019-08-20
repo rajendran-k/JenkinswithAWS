@@ -3,7 +3,8 @@ pipeline {
 
     stages {
         stage('lint HTML') {
-            steps {             
+            steps {        
+              sh 'echo "syntax checking"'     
               sh 'tidy -q -e *.html'
             }
         }
