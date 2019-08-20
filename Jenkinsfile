@@ -8,7 +8,7 @@ pipeline {
                 echo pwd
             }
         }
-         stage(‘Upload to AWS’) {
+         stage(‘AWS’) {
         steps {
           withAWS(region:’us-east-1’,credentials:’aws’) {
             s3Upload(pathStyleAccessEnabled:true, payloadSigningEnabled: true, file:’index.html’, bucket:’heemjenkins’)
